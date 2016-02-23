@@ -1,0 +1,42 @@
+How to install AMI tools in linux?
+
+1. Install Ruby :
+	sudo yum install -y ruby
+
+2. Download the RPM file using a tool such as wget or curl:
+	sudo wget http://s3.amazonaws.com/ec2-downloads/ec2-ami-tools.noarch.rpm
+
+3. Install the RPM using the following command:
+	sudo yum install ec2-ami-tools.noarch.rpm
+
+4. Verify your AMI tools installation with this command: 
+	ec2-ami-tools-version
+
+
+If you receive a load error such as cannot load such file -- ec2/amitools/version (LoadError), 
+complete the next step to add the location of your AMI tools installation to your RUBYLIB path.
+
+1. Run the following command to determine the paths to add.
+
+$ rpm -qil ec2-ami-tools | grep ec2/amitools/version
+/usr/lib/ruby/site_ruby/ec2/amitools/version.rb
+/usr/lib64/ruby/site_ruby/ec2/amitools/version.rb
+
+2. Add the locations from the previous step to your RUBYLIB path
+	export RUBYLIB=$RUBYLIB:/usr/lib/ruby/site_ruby:/usr/lib64/ruby/site_ruby
+
+3.  Verify your AMI tools installation with the following command:
+	ec2-ami-tools-version
+
+
+AMI-CLI commands:
+
+
+1. To create an instance : 
+	aws ec2-run-instances ami id -t t1.micro -s subnet XXXX -k keypair -g sg-XXX --associate pubic ip true
+
+2. To check the properties of instance : aws ec2-describe-instances
+
+3. To stop the instance: aws ec2-stop-instances
+
+4. To terminate the instance: aws ec2-terminate-instances --instance-ids i-XXXXXX
