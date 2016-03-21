@@ -1,0 +1,26 @@
+Different modes in vi editor?
+
+1.	Command mode
+2.	Insert mode
+3.	Last line mode
+
+Append text after current line
+	A
+
+Append text new line
+	O
+
+How to enter from command mode to insert mode?
+	Press : i
+
+What is the command set margin in vi?
+	:setnu
+
+How to go to 10th line directly:
+	:10
+
+How to delete a line;
+	Dd
+
+How to delete 10 lines from cursor point?
+	10dd
