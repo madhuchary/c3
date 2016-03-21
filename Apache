@@ -1,0 +1,130 @@
+How to check the version of Apache server ?
+rpm -qa |grep httpd
+
+What is meaning of "Listen" in httpd.conf file ?
+Port number on which to listen for nonsecure (http) transfers.
+
+What is DocumentRoot ?
+It is a location of files which are accessible by clients. 
+By default, the Apache HTTP server in RedHat Enterprise Linux is configured to serve files from the /var/www/html/ directory.
+
+On which port Apache server works ?
+http – port 80
+https – port 443
+
+Tell me name of main configuration file of Apache server ?
+httpd.conf
+
+On which version of apache you have worked ?
+httpd-2.2.3
+
+What do you mean by a valid ServerName directive?
+The DNS system is used to associate IP addresses with domain names. The value of ServerName is returned when the server generates a URL. If you are using a certain domain name, you must make sure that it is included in your DNS system and will be available to clients visiting your site.
+
+What is the main difference between <Location> and <Directory> sections?
+Directory sections refer to file system objects; Location sections refer to elements in the address bar of the Web page
+
+What is the difference between a restart and a graceful restart of a web server?
+During a normal restart, the server is stopped and then started, causing some requests to be lost. A graceful restart allows Apache children to continue to serve their current requests until they can be replaced with children running the new configuration
+
+What is the use of mod_perl module?
+mod_perl scripting module to allow better Perl script performance and easy integration with the Web server.
+
+If you have added “loglevel Debug” in httpd.conf file, than what will happen?
+It will give you more information in the error log in order to debug a problem.
+
+Can you record the MAC (hardware) address of clients that access your server.
+No
+
+If you have only one IP address, but you want to host two web sites on your server. What will you do?
+In this case I will use Name Based Virtual hosting.
+ServerName 10.111.203.25
+NameVirtualHost *:80
+<VirtualHost *:80>
+ServerName web1.test.com
+DocumentRoot /var/www/html/web1
+</VirtualHost>
+<VirtualHost *:80>
+ServerName web2.test2.com
+DocumentRoot /var/www/html/web2
+</VirtualHost>
+
+Can I serve content out of a directory other than the DocumentRootdirectory?
+Yes, by using “Alias” we can do this.
+
+If you have to more than one URL map to the same directory but you don't have multiple Alias directives. What you will do?
+In this case I will use “AliasMatch” directives.
+The AliasMatch directive allows you to use regular expressions to match arbitrary patterns in URLs and map anything matching the pattern to the desired URL.
+
+What we can do to find out how people are reaching your site?
+Add the following effector to your activity log format. %{Referer}
+
+How you will put a limit on uploads on your web server?
+This can be achieved by LimitRequestBody directive.
+<Directory "/var/www/html/data_uploads">
+LimitRequestBody 100000
+</Directory>
+Here I have put limit of 100000 Bytes
+
+I want to stop people using my site by Proxy server. Is it possible?
+<Directory proxy:http://www.test.com/myfiles>
+Order Allow,Deny
+Deny from all
+Satisfy All
+</Directory>
+
+What is mod_evasive module?
+mod_evasive is a third-party module that performs one simple task, and performs it very well. It detects when your site is receiving a Denial of Service (DoS) attack, and it prevents that attack from doing as much damage. mod_evasive detects when a single client is making multiple requests in a short period of time, and denies further requests from that client. The period for which the ban is in place can be very short, because it just gets renewed the next time a request is detected from that same host.
+
+If Some One want Apache server should handle multiple requests over a single TCP connection. Which of the following would allow to do this?
+A. Expirations
+B. BrowserMatch
+C. KeepAlive
+D. PersistentConnect
+E. ChunkEncode
+Ans: C
+
+Which of the following HTTP headers will direct a browser towww.nextstep4it.com after waiting five seconds?
+A. Rerwrite 5; URL = http://www.nextstep4it.com/
+B. Location 5; URL = http://www.nextstep4it.com/
+C. Refresh 5; URL = http://www.nextstep4it.com/
+D. Reload http://www.nextstep4it.com/ -t 5
+E. Direct -t 5 http://www.nextstep4it.com/
+Ans: C
+
+Cookies can be used by Apache to create a click stream log of user activity. However, for the cookies to work, Apache must be compiled with the _______ module, then the ______ directive must be
+A. mod_usertrack; Cookie Tracking on
+B. mod_cookies; Cookies on}
+C. mod_cookietracking; cookie Tracking on
+D. mod_cookielog; Cookielogging on
+E. mod_userlog, cookielogging on
+Ans: A
+
+Which of the following are TRUE regarding contains in httpd.conf? (Choose two.)
+A. Containers consist of a Paired set of delimiters.
+B. If two containers contradict, the first is applied.
+C. Containers may only be applied globally.
+D. Containers allow individual virtual hosts to have their own settings.
+Ans: A,D
+
+Which of the following best explains why Apache Web servers are able to handles multiple requests?
+A. In addition to port 80, Apache opens ports 8080, 8000, and others to handle the additional requests.
+B. Apache is able to spawn child processes that handle requests before they die.
+C. Apache uses therenice service to load balance between different system daemons.
+D. Upon reaching a set number of requests, Apache uses a raw socket to adjust a system's bandwidth to handle the additional requests.
+Ans: B
+
+How you will put a limit on uploads on your web server?
+This can be achieved by LimitRequestBody directive.
+<Directory "/var/www/html/data_uploads">
+LimitRequestBody 100000
+</Directory>
+Here I have put limit of 100000 Bytes
+
+ I want to stop people using my site by Proxy server. Is it possible?
+<Directory proxy:http://www.test.com/myfiles>
+Order Allow,Deny
+Deny from all
+Satisfy All
+</Directory>
+
