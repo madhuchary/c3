@@ -1,0 +1,175 @@
+How will you List files from a directory?
+ls
+echo *
+
+How will you list all the directories only using echo command?
+ echo */
+ 
+How will you list all the files within a directory including hidden files?
+ls –a
+
+How do you list all the files within a directory including hidden files, but do not list implied ‘.’ and ‘..’?
+ls –A
+
+How will you print the content of a directory in long format listing?
+	ls –l
+	
+How will you print escape for non-graphic character?
+	ls –b
+	
+List the size of files and folders in desired scale format. How will you achieve this?
+ls --block-size=M -l
+
+	ls --block-size=K –l
+
+List the files within a directory, but don’t show the backup files, i.e., those files that end with ~.
+ls –B
+
+Sort all the files within a directory by name and show associated last modification information.
+	ls –cl
+
+How will you control the output of ‘ls’ command to be colorful or no-color?
+
+ls –color=never
+ls –color=auto
+ls –color=always
+
+What is ‘inode’?
+The inode contains info about the file-size, its location, time of last access, time of last modification, permission.
+
+What are the process states in UNIX?
+
+Running: The process is either running or it is ready to run. 
+Waiting: The process is waiting for an event or for a resource. 
+Stopped: The process has been stopped, usually by receiving a signal.
+Zombie: The processes are dead but have not been removed from the process table.
+
+What command should you use to check the number of files and disk space used and each user’s defined quotas?
+repquota
+What command is used to remove the password assigned to a group?
+gpasswd –r
+
+What can you type at a command line to determine which shell you are using?
+Echo $SHELL
+
+What kind of files or nodes /dev/ directory contains and how do I access or see device files?
+
+Block Device Files:-  ls /dev/sd*
+Character Device Files:- ls /dev/tty*
+
+What does /etc/skell directory contains?
+The /etc/skel directory contains files and directories that are automatically copied over to a new user’s home directory when such user is created by the useradd or adduser command.
+
+Tell me name of Linux File systems?
+Ext2 Ext3 Ext4
+
+What is the difference between ext2 and ext3 file systems?
+Ext3 supports journaling.
+
+H0w we create ext3 file system on /dev/sda7 disk?
+mkfs –j /dev/sda7
+Can we convert ext2 filesystem to ext3 file system?
+tune2fs –j /dev/<Block-Device-Name>
+
+How we will create ext4 file system? 
+mke2fs -t ext4 /dev/DEV 
+
+Give me 15 commands which you use frequently?
+mkdir , lsof, top, netstat, sh, history, cd, vi, chmod, mount, service, chkconfig, fdisk –l, chown, 
+
+Give me some commands for user management/
+last, chage, chsh, lsof, chown, chmod, useradd, userdel, newusers.
+
+What is the command to do password less logins to other machines?
+expect and ssh-keygen
+
+Give me some security monitoring related commands?
+lsof, netstat, top, ps -ef, tail, last, tcpdump, sestatus, history, w.
+
+What is the difference between man, info, whatis commands and a –help option for a command?
+-whatis gives you one line answer.
+–help option for a command gives you one line answers for each option supported by a command
+-man command gives you medium size info
+-info command gives full details about a commands, lots and lots of information about a command
+
+How to check current run level of a linux server ?
+‘who -r’ & ‘runlevel’ 
+
+How to check the default gatway in linux ?
+route -n and netstat –nr
+
+What is cpio command ?
+Cpio stands for Copy in and copy out.
+Cpio copies files, lists and extract files to and from a archive 
+
+
+How to find files larger than 10MB in size in /usr directory ?
+find /usr -size +10M
+
+How to find files in the /home directory that were modified more than 120 days ago ?
+find /home -mtime +120
+
+How to find files in the /var directory that have not been accessed in the last 90 days ?
+find /var -atime -90
+
+What would the command ll | awk ‘{print $3,”owns”,$9}’ do ?
+The ll command provided will display file names and their owners.
+
+What is the use of at command in linux ?
+The at command is used to schedule a one-time execution of a program .
+
+How will you suspend a running process and put it in the background?
+Ctrl+z for suspend all running process
+
+write a command to find all of the files which have been accessed within the last 30 days/
+find / -type f -atime -30 > filename.txt
+
+what is a zombie?
+Zombie is a process state when the child dies before the parent process. In this case the structural information of the process is still in the process table.
+
+what daemon is responsible for tracking events on your system?
+syslogd
+
+what do you mean a File System?
+File System is a method to store and organize files and directories on disk
+
+Tell me the name of directory structure hierarchy for Linux
+/root /boot /bin /sbin /proc /mnt /usr /var /lib /etc /dev /opt /srv /tmp /media
+
+what does /boot directory contains?
+The /boot/ directory contains static files required to boot the system, such as the Linux kernel, boot loader configuration files. 
+These files are essential for the system to boot properly. 
+
+If someone deletes /boot directory from your server, than what will happen?
+In that case your server will be in unbootable state
+
+what does /dev directory contain?
+The /dev directory contains all device files that are attached to system
+
+What is SWAP Space?
+Swap space in Linux is used when the amount of physical memory (RAM) is full
+
+What are the steps to create SWAP files or Partition?
+- Create swap partition or file 
+– Write special signature using “mkswap” 
+– Activate swap space by “swapon –a” command 
+– Add swap entry into /etc/fstab file.
+
+ Tell me the steps to remove the swap file?
+Firstly disable the swap file by “swapoff” command. 
+Remove Swap file entry from /etc/fstab file.
+ Now remove the swap file by “rm” command
+
+ How you will create swap file of size 4 GB and explain swap file entry in /etc/fstab file?
+Use “dd” command to create swap file.
+dd if=/dev/zero of=/SWAPFILE bs=1024 count=4
+mkswap /SWAPFILE
+8
+swapon –a
+Entry into /etc/fstab file.
+/SWAPFILE swap swap defaults 0 0
+
+
+
+
+
