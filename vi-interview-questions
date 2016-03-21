@@ -24,3 +24,71 @@ How to delete a line;
 
 How to delete 10 lines from cursor point?
 	10dd
+
+How to delete 100 lines backwards from (including) the current one?
+d99k
+
+delete lines in a specific range by line number
+:1,100d
+
+delete lines in a range beginning with the current line
+:.,.+99d
+
+Which command is used to close the vi editor?
+a) q
+b) wq
+c) both (a) and (b)
+d) none of the mentioned
+Ans: c
+
+In vi editor, the key combination CTRL+f
+a) moves screen down one page
+b) moves screen up one page
+c) moves screen up one line
+d) moves screen down one line
+
+Ans: a
+
+Which vi editor command copies the current line of the file?
+a) yy
+b) yw
+c) yc
+d) none of the mentioned
+Ans:a
+
+Which command is used to delete the character before the cursor location in vi editor?
+a) X
+b) x
+c) D
+d) d
+Ans:a
+
+In vi editor, which command reads the content of another file?
+a) read
+b) r
+c) ex
+d) none of the mentioned
+Ans: c
+
+Which command searches the string in file opened in vi editor?
+a) / or ?
+b) f or F
+c) t or T
+d) none of the mentioned
+Ans: a
+
+Which command shows all the abbreviations in vi editor?
+a) ab
+b) abb
+c) show
+d) none of the mentioned
+Ans:a
+
+Which command sets the number for all lines?
+a) :set li
+b) :set ln
+c) :set nu
+d) :set nl
+Ans:c
+
+
