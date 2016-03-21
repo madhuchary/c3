@@ -1,0 +1,55 @@
+How you will install software by YUM?
+yum install <pkgname>
+
+Which option is required to assume the answer “yes” to any questions asked during installation of package dependencies for YUM?
+yum –y install packagename
+
+How to remove a software by YUM?
+yum remove <pkgname>
+
+How Many Run Levels present in Linux?
+1: Single-user mode
+2: Not used –
+3: Multi-user mode with text login –
+4: Not used –
+5: Multi-user mode with graphical login –
+6: Reboot
+
+Which configuration file is required to change the Run Level of Server or system?
+/etc/inittab
+To change the default run level, modify this line.
+id:5:initdefault:
+
+How to install Linux software’s by RPM?
+rpm -ivh test-1.0-1.i386.rpm
+
+If you are getting error “package is already installed” but you have to install package any how. what option you will use?
+rpm -ivh –replacepkgs test-1.0-1.i386.rpm
+
+Which options are required to upgrade a RPM?
+rpm -Uvh test-2.0-1.i386.rpm
+
+Explain the command “rpm -qa”?
+It will shows currently installed packages.
+
+How to verify all installed packages?
+rpm –Va
+
+What is the difference between SSH and Telnet ?
+ssh data transfer between the systems is in encrypted form.
+In Telnet data transfer between the systems is in plain text.
+SSH uses a public key for authentication.
+Telnet does not use any authentication.
+
+What is difference between AT and CRON?
+Cron command is used to schedule the task daily at the same time repeatedly.
+at command is used to schedule the task only one time.
+
+What is Super Block in Linux/Unix 
+File system type
+Size
+Status
+Information about other metadata structures
+
+How to check running kernel?
+Uname –r
